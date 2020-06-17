@@ -1,11 +1,15 @@
 function getInput {
-        echo "Please guess number of files:"
-        read guess
+	reg='[0-9]'
+	guess=""
+	while [[ ! $guess =~ $reg ]]
+	do
+		echo "Please guess number of files:"
+	        read guess
+	done 
 }
 
-
 num_of_files=$(ls | wc -w)
-guess=0
+guess=""
 
 while [[ $guess -ne $num_of_files ]]
 do
