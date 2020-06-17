@@ -8,7 +8,7 @@ function getInput {
 	done 
 }
 
-num_of_files=$(ls | wc -w)
+num_of_files=$(find . -maxdepth 1 -type f | wc -l)
 guess=""
 
 while [[ $guess -ne $num_of_files ]]
